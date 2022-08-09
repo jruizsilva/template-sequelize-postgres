@@ -1,14 +1,13 @@
 import { Sequelize } from "sequelize";
 import { local, deploy } from "../config";
-// asd
 
 const sequelize =
   process.env.NODE_ENV === "production"
     ? new Sequelize({
-        database: deploy.DB_NAME,
-        username: deploy.DB_USER,
-        password: deploy.DB_PASSWORD,
-        host: deploy.DB_HOST,
+        database: deploy.database,
+        username: deploy.username,
+        password: deploy.password,
+        host: deploy.host,
         dialect: "postgres",
         logging: false,
         pool: {
